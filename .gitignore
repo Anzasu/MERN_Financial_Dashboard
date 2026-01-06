@@ -44,3 +44,16 @@ dist-ssr/
 
 # TypeScript cache
 *.tsbuildinfo
+# Server environment
+
+server/.env
+
+server/.env.*
+
+server/.env.local
+
+# Client environment
+
+client/.env
+
+client/.env.*
