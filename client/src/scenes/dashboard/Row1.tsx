@@ -218,19 +218,36 @@ const Row1 = (props: Props) => {
             bottom: 60,
           }}
         >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis width="auto" />
+          <defs>
+              <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+                <stop
+                  offset="5%"
+                  stopColor={palette.primary[300]}
+                  stopOpacity={1}
+                />
+                <stop
+                  offset="95%"
+                  stopColor={palette.primary[300]}
+                  stopOpacity={0}
+                />
+              </linearGradient>
+            </defs>
+      <CartesianGrid vertical={false} stroke={palette.grey[800]} />
+      <XAxis 
+        dataKey="name" 
+        tickLine={false} 
+        style={{fontSize: "10px" }}
+        />
+        <YAxis 
+        tickLine={false} 
+        axisLine={false}
+        style={{fontSize: "10px" }}
+        domain={[0, 23000]}
+        />
       <Tooltip />
-      <Legend />
       <Bar 
       dataKey="revenue" 
-      fill="#8884d8" 
-      activeBar={{ 
-        fill: 'pink', 
-        stroke: 'blue' 
-      }} 
-      radius={[5, 5, 0, 0]} 
+      fill="url(#colorRevenue)"
       />
     </BarChart>
       </ResponsiveContainer>
