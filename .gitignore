@@ -1,4 +1,4 @@
-# Logs
+﻿# Logs
 logs
 *.log
 npm-debug.log*
@@ -48,7 +48,11 @@ dist-ssr/
 
 server/.env
 
-server/.env.*
+# Ignore real env files
+server/.env
+server/.env.local
+# But allow example files
+!server/.env.example
 
 server/.env.local
 
