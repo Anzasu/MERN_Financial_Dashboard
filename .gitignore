@@ -1,4 +1,6 @@
-﻿# Logs
+﻿# ============================================
+# Logs
+# ============================================
 logs
 *.log
 npm-debug.log*
@@ -7,15 +9,40 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ============================================
+# Dependencies & Build
+# ============================================
+node_modules/
+dist/
+dist-ssr/
+*.tsbuildinfo
 
-# Editor directories and files
+# ============================================
+# Environment Variables (CRITICAL - DO NOT COMMIT)
+# ============================================
+# Root level
+.env
+.env.local
+.env.*.local
+
+# Server
+server/.env
+server/.env.local
+server/.env.*
+!server/.env.example  # EXCEPTION: Template file SHOULD be committed
+
+# Client  
+client/.env
+client/.env.local
+client/.env.*
+!client/.env.example  # EXCEPTION: Template file SHOULD be committed
+
+# ============================================
+# IDE & Editor files
+# ============================================
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
@@ -23,41 +50,8 @@ dist-ssr
 *.sln
 *.sw?
 
-
-# Dependencies
-node_modules/
-
-# Build
-dist/
-dist-ssr/
-
-# Environment
-.env
-.env.local
-
-# OS
+# ============================================
+# OS files
+# ============================================
 .DS_Store
-
-# IDE
-.vscode/
-.idea/
-
-# TypeScript cache
-*.tsbuildinfo
-# Server environment
-
-server/.env
-
-# Ignore real env files
-server/.env
-server/.env.local
-# But allow example files
-!server/.env.example
-
-server/.env.local
-
-# Client environment
-
-client/.env
-
-client/.env.*
+Thumbs.db
