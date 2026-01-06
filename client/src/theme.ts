@@ -33,6 +33,7 @@ export const tokens = {
     700: "#916c33",
     800: "#614822",
     900: "#302411",
+
   },
   tertiary: {
     // purple
